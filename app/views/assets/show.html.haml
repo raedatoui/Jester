@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @asset.name
+%p
+  %b Mimetype:
+  = @asset.mimetype
+%p
+  %b Size:
+  = @asset.size
+%p
+  %b Mimetype:
+  = @asset.mimetype
+%p
+  %b Info:
+  = @asset.info
+
+= link_to 'Edit', edit_asset_path(@asset)
+\|
+= link_to 'Back', assets_path
