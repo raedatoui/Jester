@@ -1,7 +1,9 @@
 Jester::Application.routes.draw do
 
   resources :projects do
-    resources :collects
+    resources :collections do
+      resources :assets
+    end  
   end
   
   # The priority is based upon order of creation:

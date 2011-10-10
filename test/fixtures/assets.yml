@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  mimetype: MyString
+  size: 1
+  mimetype: MyString
+  info: MyString
+
+two:
+  name: MyString
+  mimetype: MyString
+  size: 1
+  mimetype: MyString
+  info: MyString

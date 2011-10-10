@@ -1,4 +1,5 @@
-%p.notice= notice
+%p#notice= notice
+
 %p
   %b Name:
   = @project.name
@@ -6,13 +7,13 @@
   %b Client:
   = @project.client
 %p
-  %b Description:
-  = @project.description
-  
-%p
   %b Url:
   = @project.url
-  
+%p
+  %b Description:
+  = @project.description
+
 = link_to 'Edit', edit_project_path(@project)
-|
-\#{link_to 'Back', projects_path}
+\|
+= link_to 'Back', projects_path
+

@@ -11,20 +11,32 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111007205755) do
+ActiveRecord::Schema.define(:version => 20111007230620) do
+
+  create_table "assets", :force => true do |t|
+    t.string   "name"
+    t.string   "mimetype"
+    t.integer  "size"
+    t.string   "info"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "collections", :force => true do |t|
     t.string   "name"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ancestry"
   end
+
+  add_index "collections", ["ancestry"], :name => "index_collections_on_ancestry"
 
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.string   "client"
-    t.string   "description"
     t.string   "url"
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

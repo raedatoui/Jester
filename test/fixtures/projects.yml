@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
 
 one:
-  name: 
-  url: MyString
+  name: MyString
   client: MyString
+  url: MyString
+  description: MyString
 
 two:
-  name: 
-  url: MyString
+  name: MyString
   client: MyString
+  url: MyString
+  description: MyString
