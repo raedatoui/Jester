@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(:version => 20111010204721) do
     t.string   "info"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "asset"
     t.string   "url"
     t.integer  "collection_id"
   end
