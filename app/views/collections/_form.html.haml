@@ -1,4 +1,4 @@
-= form_for @collection do |f|
+= form_for @collection, :url => "/projects/:project_id/collections"  do |f|
   -if @collection.errors.any?
     #error_explanation
       %h2= "#{pluralize(@collection.errors.count, "error")} prohibited this collection from being saved:"

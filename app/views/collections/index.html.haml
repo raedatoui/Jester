@@ -12,10 +12,10 @@
     %tr
       %td= collection.name
       %td= collection.description
-      %td= link_to 'Show', collection
-      %td= link_to 'Edit', edit_collection_path(collection)
-      %td= link_to 'Destroy', collection, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Show', "/projects/#{params[:project_id]}/collections/#{collection.id}"
+      %td= link_to 'Edit', "/projects/#{params[:project_id]}/collections/#{collection.id}/edit"
+      %td= link_to 'Destroy', "/projects/#{params[:project_id]}/collections/#{collection.id}", :confirm => 'Are you sure?', :method => :delete
 
 %br
 
-= link_to 'New Collection', new_collection_path
+= link_to 'New Collection', new_project_collection_path(@project)
