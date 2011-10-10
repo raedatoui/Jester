@@ -4,6 +4,7 @@ log/*.log
 tmp/
 .sass-cache/
 config/database.yml
+public/stylesheets/*
 public/stylesheets/compiled/*
 public/system/**/*
 public/assets/*
@@ -12,3 +13,4 @@ public/assets/*
 active_admin.css
 public/coffeescripts/*
 solr/data/*
+
