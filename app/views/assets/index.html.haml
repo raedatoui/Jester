@@ -17,9 +17,11 @@
       %td= asset.size
       %td= asset.info
       %td= link_to 'Show', resource_path(asset)
-      %td= link_to 'Edit', edit_asset_path(asset)
-      %td= link_to 'Destroy', asset, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Edit', edit_resource_path(asset)
+      %td= link_to 'Destroy',  resource_path(asset), :confirm => 'Are you sure?', :method => :delete
 
 %br
 
 = link_to 'New Asset', new_resource_path
+= link_to 'Back to collections', project_collections_path(@project)
+

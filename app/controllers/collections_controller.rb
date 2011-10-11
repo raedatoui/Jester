@@ -1,3 +1,10 @@
 class CollectionsController < InheritedResources::Base
-  belongs_to :project, :polymorphic => true
+  respond_to :html, :json
+  
+  belongs_to :project
+  
+  def create
+    create! { collection_url }
+  end
+    
 end
