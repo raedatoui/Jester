@@ -4,8 +4,8 @@ log/*.log
 tmp/
 .sass-cache/
 config/database.yml
+public/uploads/*
 public/stylesheets/*
-public/stylesheets/compiled/*
 public/system/**/*
 public/assets/*
 .DS_Store
