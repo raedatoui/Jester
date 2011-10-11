@@ -33,11 +33,12 @@ group :test do
   # Pretty printed test output
   gem 'turn', :require => false
 end
+
 gem "unicorn"
 gem "inherited_resources"
 gem "execjs"
 gem "therubyracer"
-gem "mysql2"
+
 gem "sunspot"
 gem "sunspot_rails"
 gem "devise"
@@ -46,7 +47,7 @@ gem "acts-as-taggable-on"
 gem "compass"
 gem "haml", ">= 3.1.2"
 gem "haml-rails", ">= 0.3.4", :group => :development
-gem "sass"
+
 gem "nifty-generators"
 gem "simple_form"
 gem "paperclip"

@@ -1,0 +1,21 @@
+%header
+	
+	.upper
+
+	%nav
+		
+		= link_to "", "#", { :class => "search_button", :title=> t(:search), :id => "search" }
+		= form_tag "/search", :id => "search_form", :method => :get do
+			= text_field_tag :keywords, params[:keywords], :value => "Search..."
+					
+
+			
+/ :javascript
+/ 		$(document).ready(function(){
+/ 				$("#search_form").hide();
+/ 				$("#search").click(function(event){
+/ 						event.preventDefault();
+/ 						$("#search_form").stop(true,true).animate({width: 'toggle', opacity: 'toggle'},200);
+/ 						$("#search_form input").focus();
+/ 				});
+/ 		});
