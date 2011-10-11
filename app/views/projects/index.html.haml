@@ -1,8 +1,14 @@
+= javascript_include_tag "projects"
+
 %h1 Listing projects
 
-%ul
+%ul#project-list
 	- @projects.each do |project|
-		%li
-			= link_to project.name, "#"
+		%li{:rel=> project_collections_path(project)}
+			= project.name
 	%li
 		= link_to 'New Project', new_project_path
+		
+		
+.grid
+		
