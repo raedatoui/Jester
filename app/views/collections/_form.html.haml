@@ -1,4 +1,6 @@
 = form_for [@project, @collection] do |f|
+  - unless @collection.ancestry.nil?
+    = f.hidden_field :ancestry, :value => @collection.ancestry
   -if @collection.errors.any?
     #error_explanation
       %h2= "#{pluralize(@collection.errors.count, "error")} prohibited this collection from being saved:"

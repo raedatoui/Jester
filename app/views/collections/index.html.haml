@@ -1,23 +1,7 @@
+= stylesheet_link_tag "collections"
 %h1 Listing collections
 
-%table
-  %tr
-    %th Name
-    %th Description
-    %th
-    %th
-    %th
-
-  - @collections.each do |collection|
-    %tr
-      %td= collection.name
-      %td= collection.description
-      %td= link_to 'Show', resource_path(collection)
-      %td= link_to 'Edit', edit_resource_path(collection)
-      %td= link_to 'Collection Assets', project_collection_assets_path(@project, collection)
-      %td= link_to 'Destroy', resource_path(collection), :confirm => 'Are you sure?', :method => :delete
-
-%br
+= get_level_1 @collections.scoped.arrange(:order => :created_at)
 
 = link_to 'New Collection', new_resource_path
 |

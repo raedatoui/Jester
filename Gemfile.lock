@@ -210,6 +210,7 @@ DEPENDENCIES
   execjs
   haml (>= 3.1.2)
   haml-rails (>= 0.3.4)
+  has_scope
   inherited_resources
   jquery-rails
   mysql2
