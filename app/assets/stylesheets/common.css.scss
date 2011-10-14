@@ -1,0 +1,94 @@
+@import 'css3-sass-mixins/all';
+@import 'mixins';
+
+$project: #ccc;
+$collection: #999;
+$asset: #999;
+$green: #4BAA5A;
+ 
+.item {
+	margin: 10px 0;
+	padding: 8px 15px;
+	border: solid 1px #999;
+	width: 200px;
+	height: 120px;
+	border-radius: 4px;
+}
+
+h3 {
+	a {
+		text-decoration: none;
+		color: #000;
+		&:visited {
+			color: #000;	
+		}	
+	}
+	.link {
+		font-size: 11px;
+		a {
+			text-decoration: underline;	
+		}
+	}
+}
+
+form {
+	margin: 8px 8px;
+	label {
+	  float: left;
+	  width: 147px;
+	}
+	input[type='submit'] {
+		margin-top: 3px;	
+	}
+	.field {
+		margin-bottom: 10px;
+	}	
+	input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+		@include border-radius(4px);
+		border: thin solid #666;
+		height: 18px;
+		padding-left: 10px;
+	}
+	
+	input[disabled="disabled"], .disabled {
+		@include opacity(0.5);
+		cursor: not-allowed;
+	}	
+	
+	textarea{
+		@include border-radius(4px);
+		border: thin solid #666;
+		padding: 10px;
+		width: 320px;
+		height: 130px
+
+	}
+	
+	input:focus {
+		outline: none;
+	}
+	
+	textarea:invalid{
+		background-color: #fff;
+	}
+	.fullwidth {
+		width: 95%;
+	}
+}
+#spacer {
+	margin: 30px 0;
+}
+.addBtn {
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0, #215E21),
+		color-stop(1, $green)
+	);
+	background-image: -moz-linear-gradient(
+		center bottom,
+		#215E21 0%,
+		$green 100%
+	);
+}

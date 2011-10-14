@@ -8,7 +8,7 @@ class CollectionsController < InheritedResources::Base
   end  
     
   def create
-    create! { collection_url }
+    create! { parent_url }
   end
   
   def new

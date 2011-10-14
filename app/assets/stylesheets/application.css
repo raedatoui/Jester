@@ -4,8 +4,14 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require style
- *= require scaffolds
+ *= require common
 */
+
+@import 'css3-sass-mixins/all';
+
+#main {
+	margin: 8px 8px;
+}
 header {
 	background-color: #fee;
 }

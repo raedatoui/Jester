@@ -8,7 +8,7 @@
 
   .field
     = f.label :name
-    = f.text_field :name
+    = f.text_field :name    
   .field
     = f.label :client
     = f.text_field :client
@@ -18,5 +18,8 @@
   .field
     = f.label :description
     = f.text_field :description
+  .field    
+    = f.label :tag_list, t("tags")
+    = f.text_area :tag_list
   .actions
     = f.submit 'Save'

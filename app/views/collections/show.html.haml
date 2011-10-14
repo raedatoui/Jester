@@ -1,16 +1,21 @@
+= stylesheet_link_tag "collections"
+= javascript_include_tag "collections"
+
 %p#notice= notice
 
-%p
-  %b Name:
-  = @collection.name
-%p
-  %b Description:
-  = @collection.description
+= render 'form'
 
-= link_to 'Edit', edit_resource_path(@collection)
-\|
-= link_to 'New Child Collection', new_resource_path(:parent_id => @collection)
-\|
-= link_to 'Assets', project_collection_assets_path(@project, @collection)
-\|
-/ = link_to 'Back', collection_path
+#spacer=  "==============================================="
+
+#collections
+   = get_level_2 @collection.children
+   .item.addBtn
+      = link_to 'New Collection', new_resource_path(:parent_id => @collection)
+
+
+
+/= link_to 'Assets', project_collection_assets_path(@project, @collection)
+
+#spacer=  "==============================================="
+
+= link_to 'Back to ' + @project.name, parent_url

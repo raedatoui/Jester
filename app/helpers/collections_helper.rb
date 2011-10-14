@@ -6,11 +6,17 @@ module CollectionsHelper
   end
 
   def get_level_1(collections)
-    collection.map do |collection, sub_collections|
+    collections.map do |collection, sub_collections|
 
       if collection.is_root?  
         render(collection)
       end
     end.join.html_safe
   end  
+  
+  def get_level_2(collections)
+    collections.map do |collection, sub_collections|
+        render(collection)
+    end.join.html_safe
+  end
 end

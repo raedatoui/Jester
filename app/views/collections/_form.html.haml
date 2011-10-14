@@ -1,3 +1,5 @@
+= stylesheet_link_tag "form"
+
 = form_for [@project, @collection] do |f|
   - unless @collection.ancestry.nil?
     = f.hidden_field :ancestry, :value => @collection.ancestry
@@ -14,5 +16,8 @@
   .field
     = f.label :description
     = f.text_field :description
+  .field    
+    = f.label :tag_list, t("tags")
+    = f.text_area :tag_list    
   .actions
     = f.submit 'Save'

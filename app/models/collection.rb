@@ -5,4 +5,6 @@ class Collection < ActiveRecord::Base
   has_many :assets, :dependent => :destroy
   
   has_ancestry
+  
+  acts_as_taggable
 end

@@ -1,14 +1,20 @@
 = javascript_include_tag "projects"
+= stylesheet_link_tag "projects"
+%h1 Projects
 
-%h1 Listing projects
-
-%ul#project-list
+#projects
 	- @projects.each do |project|
-		%li{:rel=> project_collections_path(project)}
-			= project.name
-	%li
+		.item.project{:rel=> project_collections_path(project)}
+			%h3
+				= link_to project.name, project
+				.link
+					= link_to project.url, project.url
+			%br
+			= "Created at: " + project.created_at.strftime("%B %d, %Y")
+			%br
+			= "Last Updated: " + project.updated_at.strftime("%B %d, %Y")
+			.actions
+				= link_to 'Delete', resource_path(project), :confirm => 'Are you sure? It will delete all collections and assets within', :method => :delete
+
+	.addBtn.item
 		= link_to 'New Project', new_project_path
-		
-		
-.grid
-		

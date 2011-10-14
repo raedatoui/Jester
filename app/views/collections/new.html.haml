@@ -1,5 +1,8 @@
+= stylesheet_link_tag "form"
 %h1 New collection
 
 = render 'form'
 
-= link_to 'Back', project_collections_path
+#spacer=  "==============================================="
+
+= link_to @project.name, @collection.is_root? ? parent_url : resource_path(@collection.parent)

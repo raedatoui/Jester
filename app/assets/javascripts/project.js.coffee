@@ -2,8 +2,9 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 //= require jquery.masonry.min
-$('#collections').masonry({
-	itemSelector : '.item',
-	gutter: 10,
-	columnWidth : 250}
-)
+$ ->
+	$('#collections').masonry({
+		itemSelector : '.item',
+		gutter: 10,
+		columnWidth : 250}
+	)

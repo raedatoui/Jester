@@ -1,12 +1,12 @@
-.collection
-	.content
-		%h2= link_to collection.name, resource_path(collection)
-		= "Created at: " + collection.created_at.strftime("%B %d, %Y")
-		= "Sub-collections: " + collection.children.length.to_s
-		= "Total Nodes: " + collection.descendants.length.to_s
-		%br
-		= collection.description
+.item.collection
+	%h3= link_to collection.name, project_collection_path(@project, collection)
+	= "Created at: " + collection.created_at.strftime("%B %d, %Y")
+	%br
+	= "Sub-collections: " + collection.children.length.to_s
+	%br
+	= "Total Nodes: " + collection.descendants.length.to_s
+	%br
+	= collection.description
 	%br
 	.actions
-		= link_to 'Edit', edit_resource_path(collection)
 		= link_to 'Delete', resource_path(collection), :confirm => 'Are you sure? It will delete all collections and assets within', :method => :delete
