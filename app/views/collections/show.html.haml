@@ -3,19 +3,19 @@
 
 %p#notice= notice
 
-%h1= @project.name + "  >>  " + get_collection_path(@collection) 
+%h1= @project.name + "  >>  " + get_collection_path(@collection)
+ 
 = render 'form'
 
 #spacer=  "==============================================="
 
 #collections
-   = get_level_2 @collection.children
-   .item.addBtn
-      = link_to 'New Collection', new_resource_path(:parent_id => @collection)
-
-
-
-/= link_to 'Assets', project_collection_assets_path(@project, @collection)
+	= get_level_2 @collection.children
+	= get_assets @collection
+	.item.addBtn
+		= link_to 'New Collection', new_resource_path(:parent_id => @collection)
+	.item.addBtn2
+		= link_to 'Upload', new_project_collection_asset_path(@project,@collection)
 
 #spacer=  "==============================================="
 

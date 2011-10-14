@@ -8,7 +8,7 @@ class CollectionsController < InheritedResources::Base
   end  
     
   def create
-    create! { parent_url }
+    create! { @collection.is_root? ? parent_url : resource_path(@collection.parent) }
   end
   
   def new

@@ -1,4 +1,4 @@
-%h1=  @project.name + "  >>  " + get_collection_path(@collection.parent) 
+%h1=  @project.name + (@collection.is_root? ? " >> New" : "  >>  " + get_collection_path(@collection.parent) + " >> New") 
 
 = render 'form'
 

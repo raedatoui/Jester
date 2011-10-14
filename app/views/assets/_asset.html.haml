@@ -1,0 +1,8 @@
+.item.asset
+	%h3= link_to asset.asset, project_collection_asset_path(@project, @collection, asset)
+	= "Created at: " + asset.created_at.strftime("%B %d, %Y")
+	%br
+	= "Size: " + asset.size.to_s
+	%br
+	.actions
+		= link_to 'Delete', resource_path(@collection, asset), :confirm => 'Are you sure?', :method => :delete

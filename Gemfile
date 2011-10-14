@@ -7,6 +7,7 @@ gem 'rails', '3.1.0'
 
 gem 'mysql2'
 gem 'carrierwave'
+gem 'rmagick'
 
 gem 'ancestry'
 gem 'has_scope'  

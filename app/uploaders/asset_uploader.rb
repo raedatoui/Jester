@@ -1,11 +1,12 @@
 # encoding: utf-8
-
+require 'carrierwave/processing/mime_types'
 class AssetUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or ImageScience support:
-  # include CarrierWave::RMagick
+  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
   # include CarrierWave::ImageScience
+  include CarrierWave::MimeTypes
 
   # Choose what kind of storage to use for this uploader:
   storage :file
@@ -16,7 +17,9 @@ class AssetUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-
+  
+  process :set_content_type
+  
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
@@ -25,13 +28,13 @@ class AssetUploader < CarrierWave::Uploader::Base
   # Process files as they are uploaded:
   # process :scale => [200, 300]
   #
-  # def scale(width, height)
-  #   # do something
-  # end
+  def scale(width, height)
+    # do something
+  end
 
   # Create different versions of your uploaded files:
   # version :thumb do
-  #   process :scale => [50, 50]
+  #   process :resize_to_limit => [100, 100]
   # end
 
   # Add a white list of extensions which are allowed to be uploaded.

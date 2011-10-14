@@ -1,6 +1,11 @@
-%h1 New asset
+%h1= @project.name + "  >>  " + get_collection_path(@collection) + " >> Upload"
 
 = render 'form'
 
-= link_to 'Back', collection_path
 
+#spacer=  "==============================================="
+
+= link_to @collection.name, parent_url
+
+:javascript
+	var uploadURL = "#{collection_path(@collection)}";

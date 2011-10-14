@@ -3,8 +3,9 @@
 
 $project: #ccc;
 $collection: #999;
-$asset: #999;
+$asset: #666;
 $green: #4BAA5A;
+$green2: #197F29;
  
 .item {
 	margin: 10px 0;
@@ -79,16 +80,8 @@ form {
 	margin: 30px 0;
 }
 .addBtn {
-	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(0, #215E21),
-		color-stop(1, $green)
-	);
-	background-image: -moz-linear-gradient(
-		center bottom,
-		#215E21 0%,
-		$green 100%
-	);
+	background-color: $green;
+}
+.addBtn2 {
+	background-color: $green2;
 }

@@ -19,6 +19,12 @@ module CollectionsHelper
         render(collection)
     end.join.html_safe
   end
+
+  def get_assets(collection)
+    collection.assets.map do |asset, sub_assets|
+        render(asset)
+    end.join.html_safe
+  end  
   
   def get_collection_path(collection)
     collection.path.collect{|p| p.name}.join(" >> ")

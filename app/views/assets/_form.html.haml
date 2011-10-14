@@ -1,25 +1,32 @@
-= form_for [@project, @collection, @asset] do |f|
-  -if @asset.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@asset.errors.count, "error")} prohibited this asset from being saved:"
-      %ul
-        - @asset.errors.full_messages.each do |msg|
-          %li= msg
+= javascript_include_tag "assets"
+= form_for [@project, @collection, @asset], :html => {:multipart => true} do |f|
+	-if @asset.errors.any?
+		#error_explanation
+			%h2= "#{pluralize(@asset.errors.count, "error")} prohibited this asset from being saved:"
+			%ul
+				- @asset.errors.full_messages.each do |msg|
+					%li= msg
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :mimetype
-    = f.text_field :mimetype
-  .field
-    = f.label :size
-    = f.number_field :size
-  .field
-    = f.label :info
-    = f.text_field :info
-  .field
-    = f.label :asset
-    = f.file_field :asset
-  .actions
-    = f.submit 'Save'
+	.field
+		= f.label :name
+		= f.text_field :name
+	.field
+		= f.label :mimetype
+		= f.text_field :mimetype
+	.field
+		= f.label :size
+		= f.number_field :size
+	.field
+		= f.label :info
+		= f.text_field :info
+	.field
+		= f.label :asset
+		= f.file_field :asset
+	#upcontainer
+		#filelist No runtime found.
+		%br
+		%a#pickfiles{:href => "#"} [Select files]
+		%a#uploadfiles{:href => "#"} [Upload files]
+
+	.actions
+		= f.submit 'Save'
