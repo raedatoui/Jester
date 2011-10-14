@@ -1,5 +1,3 @@
-= stylesheet_link_tag "form"
-
 = form_for [@project, @collection] do |f|
   - unless @collection.ancestry.nil?
     = f.hidden_field :ancestry, :value => @collection.ancestry

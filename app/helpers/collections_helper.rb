@@ -19,4 +19,9 @@ module CollectionsHelper
         render(collection)
     end.join.html_safe
   end
+  
+  def get_collection_path(collection)
+    collection.path.collect{|p| p.name}.join(" >> ")
+    
+  end  
 end

@@ -1,5 +1,4 @@
-= stylesheet_link_tag "form"
-%h1 New collection
+%h1=  @project.name + "  >>  " + get_collection_path(@collection.parent) 
 
 = render 'form'
 

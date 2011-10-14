@@ -3,6 +3,7 @@
 
 %p#notice= notice
 
+%h1= @project.name + "  >>  " + get_collection_path(@collection) 
 = render 'form'
 
 #spacer=  "==============================================="
@@ -18,4 +19,4 @@
 
 #spacer=  "==============================================="
 
-= link_to 'Back to ' + @project.name, parent_url
+= link_to @project.name, @collection.is_root? ? parent_url : resource_path(@collection.parent)
