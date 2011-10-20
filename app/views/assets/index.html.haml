@@ -1,28 +1,25 @@
+= stylesheet_link_tag "plupload/jquery.plupload.queue/css/jquery.plupload.queue"
+= javascript_include_tag "plupload/jquery.plupload.queue/jquery.plupload.queue", "plupload/plupload", "plupload/plupload.flash", "plupload/plupload.html5", "plupload/plupload.html4"  
 = javascript_include_tag "assets"
-%h1 Listing assets
+= stylesheet_link_tag "assets"
+		
+%h1= @project.name + "  >>  " + get_collection_path(@collection) + " >> Upload"
 
-%table
-  %tr
-    %th Name
-    %th Mimetype
-    %th Size
-    %th Info
-    %th
-    %th
-    %th
+#uploader
+	%p You browser doesn't have HTML5, Flash or Silverlight support.
+	
+= javascript_tag do
+	= render "upload.js"
 
-  - @assets.each do |asset|
-    %tr
-      %td= asset.name
-      %td= asset.mimetype
-      %td= asset.size
-      %td= asset.info
-      %td= link_to 'Show', resource_path(asset)
-      %td= link_to 'Edit', edit_resource_path(asset)
-      %td= link_to 'Destroy',  resource_path(asset), :confirm => 'Are you sure?', :method => :delete
+#spacer=  "==============================================="
 
-%br
+#collections
+	= render :partial => "asset", :collection => @assets
 
-= link_to 'New Asset', new_resource_path
-= link_to 'Back to collections', project_collections_path(@project)
+#spacer=  "==============================================="
+= link_to @collection.name, parent_url
+
+:javascript
+	var uploadURL = "#{collection_path(@collection)}";
+	
 

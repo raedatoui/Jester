@@ -11,17 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111010204721) do
+ActiveRecord::Schema.define(:version => 20111017164904) do
 
   create_table "assets", :force => true do |t|
-    t.string   "name"
-    t.string   "mimetype"
+    t.string   "file"
+    t.string   "content_type"
     t.integer  "size"
-    t.string   "info"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "asset"
-    t.string   "url"
     t.integer  "collection_id"
   end
 

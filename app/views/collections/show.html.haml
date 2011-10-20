@@ -15,7 +15,7 @@
 	.item.addBtn
 		= link_to 'New Collection', new_resource_path(:parent_id => @collection)
 	.item.addBtn2
-		= link_to 'Upload', new_project_collection_asset_path(@project,@collection)
+		= link_to 'Files', project_collection_assets_path(@project,@collection)
 
 #spacer=  "==============================================="
 

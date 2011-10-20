@@ -1,6 +1,6 @@
 class Asset < ActiveRecord::Base
-  attr_accessible :asset
+  attr_accessible :file
   belongs_to :collection
     
-  mount_uploader :asset, AssetUploader
+  mount_uploader :file, AssetUploader
 end
